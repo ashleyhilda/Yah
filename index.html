@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 1 Year Anniversary 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 500px;
+      position: relative;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #ff4d6d;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    img.sticker {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 15px 0 0 0;
+      background-color: #ff4d6d;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      color: #ff4d6d;
+      animation: float 3s linear infinite;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(0); opacity: 1;}
+      100% {transform: translateY(-500px); opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img class="sticker" src="https://i.imgur.com/J5LVHEL.png" alt="cute heart sticker">
+    <h1>Happy 1 Year Anniversary Baby 🥰🫶</h1>
+    <p>
+Hey baby, I am writing this message for you to appreciate you being in my life. I know you have the feeling that I don't care or maybe I don't appreciate you enough. I love you baby 🥺. I will always do, there is no single day I have doubted my love for you🫶😍. 
+
+It breaks my heart when you always feel like I don't love or I don't show you love, but I do—it's just that my way of showing it is way different from yours 😁. 
+
+As we start another chapter of our love, I want to say happy 1 year anniversary my love 🫶😍. It has been a journey of ups and downs, but we have made it to one year. To more years my baby! Cheers to building this relationship together 🥂, cheers to glowing and growing together baby 😍🫶, cheers to one year!
+    </p>
+    <button onclick="spawnHearts()">Send Some Hearts 💖</button>
+    <br>
+    <button onclick="playMusic()">Play Our Song 🎵</button>
+  </div>
+
+  <div class="hearts"></div>
+
+  <audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function spawnHearts() {
+      const heartsContainer = document.querySelector('.hearts');
+      for(let i=0; i<30; i++){
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerText = '💖';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.fontSize = (15 + Math.random()*25) + 'px';
+        heart.style.animationDuration = (2 + Math.random()*2) + 's';
+        heartsContainer.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+      }
+    }
+
+    function playMusic() {
+      const music = document.getElementById('music');
+      music.play();
+      alert("Music is playing! 💖🎵");
+    }
+  </script>
+
+</body>
+</html>
